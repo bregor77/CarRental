@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @car %>
+
+<!-- Display "Delete Car" button if Admin is login - using USER ROLE -->
+<div>
+  <% if current_user %>
+    <% if current_user.admin? %>
+        <h5 style="color: blue">You are Admin. You can add, edit and delete a car</h5>
+        <%= link_to "Edit this car", edit_car_path(@car), class:"btn btn-outline-success my-2 my-sm-0" %>
+        <%= link_to "Back to cars", cars_path, class:"btn btn-outline-success my-2 my-sm-0" %>
+        <br><br/>
+        <%= button_to "Delete this car", @car, method: :delete, class:"btn btn-danger"  %><br>
+      <% else %> 
+      <%= link_to "Back to cars", cars_path, class:"btn btn-outline-success my-2 my-sm-0" %>       
+    <% end %>    
+  <% end %>
+</div>
+
+<h2>Comments</h2>
+<%= render @car.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%# "Go to top" button %>
+<button class="topBtn"><a href="" style="color: white">Go to top</a></button>

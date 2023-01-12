@@ -1,0 +1,66 @@
+<%# HOME PAGE %>
+<div class="main-title text-center">
+    <br><h1>Car Rental Home Page</h1><br>
+</div>
+<hr />
+
+<%# API 1. Displaying weather infomration at home page %>
+<div class="w-full text-center">
+    <p>Check the weather! Winter is coming!</p>
+    <p>It's a good reason to rent a cosy car!</p>
+    <hr /><br>
+    <h5>Weather forecast for: <%= @weather.location %></h5>
+    <p><%= Date.today.strftime("%A, %B, %d") %></p>
+    <img class="mx-auto" src= "<%= @weather.icon_url %>" />
+    <p><%= @weather.status %></p>
+    <p class="text-xs"><%= @weather.description %></p>
+    <p><%= @weather.temperature %><span class="italic"> <sup>o</sup>C</span></p>
+</div>
+<hr />
+
+<%# Displaying 3 columns with images using bootstrap v.4.6 installed in layouts/application.html.erb. Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop %>
+<div class="row">
+    <div class="col-sm col-md-4"><%= image_tag "image1.png", class:"img-fluid", alt:"" %></div>
+    <div class="col-sm col-md-4"><%= image_tag "image2.png", class:"img-fluid", alt:"" %></div>
+    <div class="col-sm col-md-4"><%= image_tag "image3.png", class:"img-fluid", alt:"" %></div>
+</div>
+
+<%# API 2. Displaying daily news at home page %>
+<div>
+    <br><h3>3 Daily News for: <%= Date.today.strftime("%A, %d %B, %j") %> Day of <%= Date.today.strftime("%Y") %></h3>
+    
+    <%# Daily News 1 %>
+    <h4>News 1</h4>   
+    <p><%= @news.title1 %></p>
+    <p class="mt-3"><%= @news.description1 %></p>
+    <% if @news.urlToImage1 %>
+        <p><%= image_tag @news.urlToImage1, style={width:"500"} %></p>   
+    <% end %>
+    <p class="mt-4"><%= @news.content1 %></p>    
+    <p><%= link_to @news.url1 %></p>
+    <hr />
+
+    <%# Daily News 2 %>
+    <h4>News 2</h4>   
+    <p><%= @news.title2 %></p>
+    <p class="mt-3"><%= @news.description2 %></p>
+    <% if @news.urlToImage2 %>
+        <p><%= image_tag @news.urlToImage2, style={width:"500"} %></p>    
+    <% end %>
+    <p class="mt-3"><%= @news.content2 %></p>
+    <p><%= link_to @news.url2 %></p>
+    <hr />
+
+    <%# Daily News 3 %>
+    <h4>News 3</h4>   
+    <p><%= @news.title3 %></p>
+    <p class="mt-3"><%= @news.description3 %></p>
+    <% if @news.urlToImage3 %>
+        <p><%= image_tag @news.urlToImage3, style={width:"500"} %></p>    
+    <% end %>
+    <p class="mt-3"><%= @news.content3 %></p>
+    <p><%= link_to @news.url3 %></p>
+</div>
+
+<%# "Go to top" button %>
+<button class="topBtn"><a href="" style="color: white">Go to top</a></button>

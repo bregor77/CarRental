@@ -1,0 +1,29 @@
+<%# Partial used for "Show List of Cars" and "Display details of car" %>
+
+<div id="<%= dom_id car %>">
+  <p>
+    <strong>Brand:</strong>
+    <%= car.brand %>
+  </p>
+  
+  <p>
+    <strong>Model:</strong>
+    <%= car.carmodel %>
+  </p>
+
+  <p>
+    <strong>Year:</strong>
+    <%= car.year %>
+  </p>
+
+  <p>
+    <strong>Car Description:</strong>
+    <%= car.body %>
+  </p>
+
+  <p>
+    <strong>Price per day:</strong> €
+    <%= car.price %>
+  </p>
+
+</div>

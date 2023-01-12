@@ -1,0 +1,9 @@
+<%# Rendering form for editing car %>
+<h1>Editing car</h1>
+
+<%= render "form", car: @car %><br>
+
+<div>
+  <%= link_to "Show this car", @car, class:"btn btn-outline-success my-2 my-sm-0" %>
+  <%= link_to "Back to cars", cars_path, class:"btn btn-outline-success my-2 my-sm-0" %>
+</div>

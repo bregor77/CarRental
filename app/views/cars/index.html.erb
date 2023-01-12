@@ -1,0 +1,44 @@
+<p style="color: green"><%= notice %></p>
+
+<!-- Displaying amount of cars in our database  -->
+Our Car Rental has <%= Car.public_count %> cars and counting!<hr />
+
+<!-- Search -->
+<a class="navbar-brand">Search by brand or car model:</a>
+<%= search_form_for @q do |form| %>  
+  <%= form.search_field :brand_cont, class:"form-control mr-sm-2", type:"search", placeholder:"Brand" %><br>
+  <%= form.search_field :carmodel_cont, class:"form-control mr-sm-2", type:"search", placeholder:"Car Model" %><br>
+
+  <form class="form-inline">
+    <%= form.submit class:"btn btn-outline-success my-2 my-sm-0" %>
+    <%= link_to "Refresh the page", cars_path, class:"btn btn-outline-success my-2 my-sm-0" %>
+  </form>
+
+  <h2 class="text-center"><%= pluralize(@cars.count, "result") %></h2><hr />
+<% end %>
+
+<!-- Listing of cars  -->
+<h1>List of Cars:</h1><br>
+
+<div id="cars">
+  <% @cars.each do |car| %>        
+    <%= render car %>
+    <p>
+      <%= link_to "Show this car", car, class:"btn btn-outline-primary" %>
+    </p><hr />
+    <% unless car.archived? %>      
+    <% end %>
+  <% end %> 
+</div>
+
+<!-- Display "New Car" button visible only for ADMIN- using USER ROLE -->
+<% if current_user %>
+  <% if current_user.admin? %>
+  <%# if current_user.moderator? || current_user.admin? %> <!-- working but it gives and errors in TESTS -->
+    <p><%= link_to "New Car", new_car_path, class:"btn btn-primary" %></p><br>
+  <% end %>
+<% end %>
+
+<!-- "Go to top" button -->
+<button class="topBtn"><a href="" style="color: white">Go to top</a></button>
+<%#= button_to "Go to top", href:"", class:"btn btn-outline-primary" %> <!-- not fully working, just for test -->
