@@ -21,8 +21,10 @@ module ActiveSupport
       post sign_in_url(email: user.email, password: user.password)
     end
   end
-  
-  class ActionDispatch::IntegrationTest
-    include SignInHelper
+
+  module ActionDispatch
+    class IntegrationTest
+      include SignInHelper
+    end
   end
 end

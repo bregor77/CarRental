@@ -16,7 +16,7 @@ class CarController < ApplicationController
     # raise     ## to show the console in the browser for test purposes
     # puts res.body if res.is_a?(Net::HTTPSSuccess)
     # @data2 = JSON.parse(res.body)
-    
+
     # *** Using the API 2 (Daily News) *** ver. 2 - better
     @currentdate = Date.today
     data2 = DailyNewsService.new(q: 'tesla elon musk', sortBy: 'publishedAt', from: '@currentdate', language: 'en').call

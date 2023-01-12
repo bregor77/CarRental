@@ -30,7 +30,7 @@ class CurrentWeatherService
     # setting uri
     @uri = URI(BASE_URL)
     # setting different parameters as a query
-    params = { lat: latitude, lon: longitude, units: units, appid: API_KEY }
+    params = { lat: latitude, lon: longitude, units:, appid: API_KEY }
     @uri.query = URI.encode_www_form(params)
     # returning it
     @uri

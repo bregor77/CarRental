@@ -19,8 +19,8 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     get new_car_url
     assert_response :success
   end
-  
-  test "should not get new if signed out" do
+
+  test 'should not get new if signed out' do
     sign_out users(:mariusz)
     get new_car_url
     assert_response :redirect
@@ -28,8 +28,10 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create car' do
     assert_difference('Car.count') do
-    post cars_url, params: { car: { brand: @car.brand, carmodel: @car.carmodel, body: @car.body, price: @car.price, year: @car.year, status: @car.status } }
-    # post cars_url, params: { car: { brand: @car.brand, carmodel: @car.carmodel, body: @car.body, price: @car.price, year: @car.year } }
+      # post cars_url, params: { car: { brand: @car.brand, carmodel: @car.carmodel, body: @car.body, price: @car.price, year: @car.year, status: @car.status } }
+      post cars_url,
+           params: { car: { brand: @car.brand, carmodel: @car.carmodel, body: @car.body, price: @car.price,
+                            year: @car.year } }
     end
 
     assert_redirected_to car_url(Car.last)
@@ -46,8 +48,10 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update car' do
-    patch car_url(@car), params: { car: { brand: @car.brand, carmodel: @car.carmodel, body: @car.body, price: @car.price, year: @car.year, status: @car.status } }
-    # patch car_url(@car), params: { car: { brand: @car.brand, carmodel: @car.carmodel, body: @car.body, price: @car.price, year: @car.year } }
+    # patch car_url(@car), params: { car: { brand: @car.brand, carmodel: @car.carmodel, body: @car.body, price: @car.price, year: @car.year, status: @car.status } }
+    patch car_url(@car),
+          params: { car: { brand: @car.brand, carmodel: @car.carmodel, body: @car.body, price: @car.price,
+                           year: @car.year } }
     assert_redirected_to car_url(@car)
   end
 

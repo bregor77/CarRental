@@ -6,7 +6,7 @@ class News
   def initialize(data2)
     @data2 = data2.with_indifferent_access
   end
-  
+
   # methods declaring parameters retrieved as JSON data for News 1
   def title1
     daily_news1[:title]
@@ -27,7 +27,6 @@ class News
   def url1
     daily_news1[:url]
   end
-
 
   # methods declaring parameters retrieved as JSON data for News 2
   def title2
@@ -50,7 +49,6 @@ class News
     daily_news2[:url]
   end
 
-
   # methods declaring parameters retrieved as JSON data for News 3
   def title3
     daily_news3[:title]
@@ -72,7 +70,6 @@ class News
     daily_news3[:url]
   end
 
-  
   private
 
   attr_reader :data2
@@ -81,12 +78,12 @@ class News
   def daily_news1
     @daily_news1 ||= data2[:articles][0]
   end
-  
+
   # News 2 method for a second set of objects in the array "articles"
   def daily_news2
     @daily_news2 ||= data2[:articles][1]
   end
-  
+
   # News 3 method for a third set of objects in the array "articles"
   def daily_news3
     @daily_news3 ||= data2[:articles][2]

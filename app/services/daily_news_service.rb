@@ -7,7 +7,7 @@ class DailyNewsService
   API_KEY2 = '186c5be645b046d0a0abcc71971e6867'
   # API_KEY2 = ENV['DAILY_NEWS_API_KEY']
 
-  def initialize(q:, from:, sortBy:, language: )    
+  def initialize(q:, from:, sortBy:, language:)
     @q = q
     @sortBy = sortBy
     @from = from
@@ -15,7 +15,7 @@ class DailyNewsService
   end
 
   def call
-    response = Net::HTTP.get_response(uri2)   
+    response = Net::HTTP.get_response(uri2)
     JSON.parse(response.body)
   end
 
@@ -25,10 +25,11 @@ class DailyNewsService
 
   def uri2
     return @uri2 if defined?(@uri2)
+
     # setting uri2
     @uri2 = URI(BASE_URL2)
     # setting different parameters as a query
-    params = { q: q, from: from, sortBy: sortBy, language: language, apiKey: API_KEY2 }
+    params = { q:, from:, sortBy:, language:, apiKey: API_KEY2 }
     @uri2.query = URI.encode_www_form(params)
     # returning it
     @uri2
