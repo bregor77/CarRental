@@ -7,9 +7,9 @@ class DailyNewsService
   API_KEY2 = '186c5be645b046d0a0abcc71971e6867'
   # API_KEY2 = ENV['DAILY_NEWS_API_KEY']
 
-  def initialize(q:, from:, sortBy:, language:)
-    @q = q
-    @sortBy = sortBy
+  def initialize(querry:, from:, sortby:, language:)
+    @querry = querry
+    @sortby = sortby
     @from = from
     @language = language
   end
@@ -21,7 +21,7 @@ class DailyNewsService
 
   private
 
-  attr_reader :q, :from, :sortBy, :language
+  attr_reader :querry, :from, :sortby, :language
 
   def uri2
     return @uri2 if defined?(@uri2)
@@ -29,7 +29,7 @@ class DailyNewsService
     # setting uri2
     @uri2 = URI(BASE_URL2)
     # setting different parameters as a query
-    params = { q:, from:, sortBy:, language:, apiKey: API_KEY2 }
+    params = { q: querry, from:, sortBy: sortby, language:, apiKey: API_KEY2 }
     @uri2.query = URI.encode_www_form(params)
     # returning it
     @uri2

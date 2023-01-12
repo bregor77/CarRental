@@ -20,7 +20,7 @@ class News
     daily_news1[:content]
   end
 
-  def urlToImage1
+  def url_to_image1
     daily_news1[:urlToImage]
   end
 
@@ -41,7 +41,7 @@ class News
     daily_news2[:content]
   end
 
-  def urlToImage2
+  def url_to_image2
     daily_news2[:urlToImage]
   end
 
@@ -62,7 +62,7 @@ class News
     daily_news3[:content]
   end
 
-  def urlToImage3
+  def url_to_image3
     daily_news3[:urlToImage]
   end
 

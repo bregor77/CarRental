@@ -19,7 +19,8 @@ class CarController < ApplicationController
 
     # *** Using the API 2 (Daily News) *** ver. 2 - better
     @currentdate = Date.today
-    data2 = DailyNewsService.new(q: 'tesla elon musk', sortBy: 'publishedAt', from: '@currentdate', language: 'en').call
+    data2 = DailyNewsService.new(querry: 'tesla elon musk', sortby: 'publishedAt', from: '@currentdate',
+                                 language: 'en').call
     # instantiate the "data2"
     @news = News.new(data2)
   end
