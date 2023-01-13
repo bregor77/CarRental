@@ -11,13 +11,13 @@
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
-Lint/RedundantCopDisableDirective:
-  Exclude:
-    - 'config/initializers/devise.rb'
-    - 'bin/*'
-    - 'db/schema.rb'
-    - '*/usr/bin/env ruby'
-    - '*/usr/bin/env ruby'
+# Lint/RedundantCopDisableDirective:
+#   Exclude:
+#     - 'config/initializers/devise.rb'
+#     - 'bin/*'
+#     - 'db/schema.rb'
+#     - '*/usr/bin/env ruby'
+#     - '*/usr/bin/env ruby'
     # - '*/schema.rb'
     # - 'db/migrate/*'
     # - '*/migrate/*'
@@ -26,18 +26,18 @@ Lint/RedundantCopDisableDirective:
     # - 'Gemfile'
     # - 'features/**/*'
 
-Lint/RedundantCopDisableDirective:
-  Exclude:
-    - 'config/initializers/devise.rb'
-    - 'bin/*'
-    - 'db/schema.rb'
-    - '*/usr/bin/env ruby'
+# Lint/RedundantCopDisableDirective:
+#   Exclude:
+#     - 'config/initializers/devise.rb'
+#     - 'bin/*'
+#     - 'db/schema.rb'
+#     - '*/usr/bin/env ruby'
 
-AllCops:
-  Exclude:
+# AllCops:
+#   Exclude:
 #     - 'node_modules/**/*'
 #     - 'vendor/**/*'
-      - '*/usr/bin/env ruby'
+      # - '*/usr/bin/env ruby'
 #   NewCops: disable
 
 # Style/BlockDelimiters:

@@ -4,7 +4,8 @@
 class CarController < ApplicationController
   def index
     # *** Using the API 1 (Weather) ***
-    data = CurrentWeatherService.new(latitude: '53.3498', longitude: '-6.266155', units: 'metric').call
+    data = CurrentWeatherService.new(latitude: '53.3498', longitude: '-6.266155',
+                                     units: 'metric').call
     # instantiate the "data"
     @weather = Weather.new(data)
 
@@ -19,7 +20,8 @@ class CarController < ApplicationController
 
     # *** Using the API 2 (Daily News) *** ver. 2 - better
     @currentdate = Time.zone.today
-    data2 = DailyNewsService.new(querry: 'tesla elon musk', sortby: 'publishedAt', from: '@currentdate', language: 'en').call
+    data2 = DailyNewsService.new(querry: 'tesla elon musk', sortby: 'publishedAt',
+                                 from: '@currentdate', language: 'en').call
     # instantiate the "data2"
     @news = News.new(data2)
   end
