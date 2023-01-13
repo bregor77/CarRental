@@ -14,8 +14,10 @@
 Lint/RedundantCopDisableDirective:
   Exclude:
     - 'config/initializers/devise.rb'
-    # - 'bin/*'
-    # - 'db/schema.rb'
+    - 'bin/*'
+    - 'db/schema.rb'
+    - '*/usr/bin/env ruby'
+    - '*/usr/bin/env ruby'
     # - '*/schema.rb'
     # - 'db/migrate/*'
     # - '*/migrate/*'
@@ -24,10 +26,18 @@ Lint/RedundantCopDisableDirective:
     # - 'Gemfile'
     # - 'features/**/*'
 
-# AllCops:
-#   Exclude:
+Lint/RedundantCopDisableDirective:
+  Exclude:
+    - 'config/initializers/devise.rb'
+    - 'bin/*'
+    - 'db/schema.rb'
+    - '*/usr/bin/env ruby'
+
+AllCops:
+  Exclude:
 #     - 'node_modules/**/*'
 #     - 'vendor/**/*'
+      - '*/usr/bin/env ruby'
 #   NewCops: disable
 
 # Style/BlockDelimiters:
