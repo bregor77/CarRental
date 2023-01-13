@@ -98,7 +98,7 @@ gem 'devise', '~> 4.8'
 gem 'ransack', '~> 3.2'
 
 # for API
-gem 'httparty', '~> 0.20.0'
+gem 'httparty', '~> 0.21.0'
 
 # for KEY in API
 gem 'dotenv-rails', groups: %i[development test]
