@@ -11,6 +11,15 @@
 Lint/RedundantCopDisableDirective:
   Exclude:
     - 'config/initializers/devise.rb'
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
+    - 'config/**/*'
+    - 'lib/tasks/*'
+    - 'Gemfile'
+    - 'features/**/*'
+    - 'spec/**/*'
 
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, AllowedMethods, AllowedPatterns, IgnoredMethods.
@@ -47,26 +56,22 @@ Layout/LineLength:
   Max: 198
 
 
-
-# AllCops:
-#     NewCops: enable
-# Gemspec/DeprecatedAttributeAssignment: # new in 1.30
-#   Enabled: true
-
-
 # https://sakanasoft.net/rubocop/
 # AllCops:
-#   TargetRubyVersion: 2.5
-#   Exclude:
-#     - bin/*
-#     - db/schema.rb
-#     - db/migrate/*
-#     - vendor/**/*
-#     - config/**/*
-#     - lib/tasks/*
-#     - Gemfile
-#     - features/**/*
-#     - spec/**/*
+    # NewCops: enable
+  # Exclude:
+  # - bin/*
+  # - db/schema.rb
+  # - db/migrate/*
+  # - vendor/**/*
+  # - config/**/*
+  # - lib/tasks/*
+  # - Gemfile
+  # - features/**/*
+  # - spec/**/*
+
+Gemspec/DeprecatedAttributeAssignment:
+  Enabled: false
 
 # Rails:
 #   Enabled: true
