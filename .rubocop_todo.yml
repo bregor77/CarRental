@@ -47,6 +47,7 @@ Layout/LineLength:
   Max: 198
 
 
+
 # AllCops:
 #     NewCops: enable
 # Gemspec/DeprecatedAttributeAssignment: # new in 1.30
@@ -76,8 +77,8 @@ Layout/LineLength:
 # Style/FrozenStringLiteralComment:
 #   Enabled: false
 
-LineLength:
-  Enabled: false
+# LineLength:
+#   Enabled: false
 
 # Style/AsciiComments:
 #   Enabled: false
