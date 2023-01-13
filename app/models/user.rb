@@ -17,7 +17,7 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX, message: 'invalid format' },
                     uniqueness: { case_sensitive: false }
 
-  enum role: %i[user moderator admin]
+  enum role: { user: 0, moderator: 1, admin: 2 }
   after_initialize :set_default_role, if: :new_record?
 
   # Setting default role for the user during creating a new user

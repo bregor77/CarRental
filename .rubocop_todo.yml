@@ -6,20 +6,36 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
+# require:
+#   - rubocop-rails
+
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 Lint/RedundantCopDisableDirective:
   Exclude:
     - 'config/initializers/devise.rb'
-    - 'bin/*'
-    - 'db/schema.rb'
-    - 'db/migrate/*'
-    - 'vendor/**/*'
-    - 'config/**/*'
-    - 'lib/tasks/*'
-    - 'Gemfile'
-    - 'features/**/*'
-    - 'spec/**/*'
+    # - 'bin/*'
+    # - 'db/schema.rb'
+    # - '*/schema.rb'
+    # - 'db/migrate/*'
+    # - '*/migrate/*'
+    # - 'config/**/*'
+    # - 'lib/tasks/*'
+    # - 'Gemfile'
+    # - 'features/**/*'
+
+# AllCops:
+#   Exclude:
+#     - 'node_modules/**/*'
+#     - 'vendor/**/*'
+#   NewCops: disable
+
+# Style/BlockDelimiters:
+#   Exclude:
+#     - "spec/**/*"
+
+# Gemspec/DeprecatedAttributeAssignment:
+#   Enabled: false
 
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, AllowedMethods, AllowedPatterns, IgnoredMethods.
@@ -69,9 +85,6 @@ Layout/LineLength:
   # - Gemfile
   # - features/**/*
   # - spec/**/*
-
-Gemspec/DeprecatedAttributeAssignment:
-  Enabled: false
 
 # Rails:
 #   Enabled: true

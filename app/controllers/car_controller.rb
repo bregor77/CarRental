@@ -18,9 +18,8 @@ class CarController < ApplicationController
     # @data2 = JSON.parse(res.body)
 
     # *** Using the API 2 (Daily News) *** ver. 2 - better
-    @currentdate = Date.today
-    data2 = DailyNewsService.new(querry: 'tesla elon musk', sortby: 'publishedAt', from: '@currentdate',
-                                 language: 'en').call
+    @currentdate = Time.zone.today
+    data2 = DailyNewsService.new(querry: 'tesla elon musk', sortby: 'publishedAt', from: '@currentdate', language: 'en').call
     # instantiate the "data2"
     @news = News.new(data2)
   end
